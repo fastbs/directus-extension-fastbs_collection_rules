@@ -1,0 +1,64 @@
+{
+	"name": "fastbs_collection_rules_2",
+	"description": "Custom rules for Directus collections",
+	"icon": "extension",
+	"version": "1.0.2",
+	"keywords": [
+		"directus",
+		"directus-extension",
+		"directus-custom-bundle"
+	],
+	"type": "module",
+	"directus:extension": {
+		"type": "bundle",
+		"path": {
+			"app": "dist/app.js",
+			"api": "dist/api.js"
+		},
+		"entries": [
+			{
+				"type": "module",
+				"name": "fastbs.module",
+				"source": "src/fastbs.module/index.ts"
+			},
+			{
+				"type": "hook",
+				"name": "fastbs.hook",
+				"source": "src/fastbs.hook/index.js"
+			},
+			{
+				"type": "interface",
+				"name": "fastbs.interface.collection.selector",
+				"source": "src/fastbs.interface.collection.selector/index.ts"
+			},
+			{
+				"type": "endpoint",
+				"name": "reports",
+				"source": "src/reports/index.js"
+			}
+		],
+		"host": "^10.3.3"
+	},
+	"scripts": {
+		"build": "directus-extension build",
+		"dev": "directus-extension build -w --no-minify",
+		"link": "directus-extension link",
+		"add": "directus-extension add"
+	},
+	"devDependencies": {
+		"@directus/errors": "^0.2.3",
+		"@directus/extensions-sdk": "10.3.3",
+		"@types/node": "^20.14.1",
+		"sass": "^1.71.1",
+		"typescript": "^5.4.5",
+		"vue": "^3.4.27",
+		"vue-router": "^4.3.0"
+	},
+	"dependencies": {
+		"angular-expressions": "^1.2.1",
+		"axios": "^1.6.8",
+		"lodash.get": "^4.4.2",
+		"docxtemplater": "^3.47.4",
+		"pizzip": "^3.1.7"
+	}
+}
